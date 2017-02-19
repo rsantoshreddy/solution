@@ -1,0 +1,35 @@
+<div>
+    <h2 class="page-header text-center">List of contacts</h2>
+    <p class="text-center">
+        <a href="contacts/add" class="btn btn-lg btn-outline">Add Contact</a>
+    </p>
+    <ul class="media-list row contacts-container">
+        <li class="media col-md-6 col-lg-4" ng-repeat="contact in contacts">
+            <div class="thumbnail">
+                <img class="media-object" ng-src="img/faces/{{contact.id}}.jpg">
+            </div>
+            <div class="media-heading">
+                <h3> {{contact.name}}
+                <small>
+                    <a href="contacts/edit/1">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="#" data-ng-click="deleteContact(contact.id)" class="delete-contract">
+                    <span class="glyphicon glyphicon-trash"></span>
+                    </a>
+                </small>
+                </h3>
+            </div>
+            <div class="media-body">
+                <dl>
+                    <dt>Phone Number: </dt>
+                    <dd>{{contact.tel}}</dd>
+                    <dt>Email:</dt>
+                    <dd>{{contact.email}}</dd>
+                </dl>
+            </div>
+            <hr>
+        </li>
+    </ul>
+</div>
+
